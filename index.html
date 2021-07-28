@@ -29,56 +29,56 @@
                 <h3>New Mixxes </h3>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="0">
                     <img src="../image/3.jpg" alt="">
                 </a>
                 <h4> Dj Uncle Sam</h4>
                 <p> Urban Hits-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="1">
                     <img src="../image/4.jpg" alt="">
                 </a>
                 <h4> Dj Uncle Sam</h4>
                 <p> Summer Playlist-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="2">
                     <img src="../image/6.png" alt="">
                 </a>
                 <h4> Dj Kim</h4>
                 <p> Kujoma Thursday-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="3">
                     <img src="../image/3.jpg" alt="">
                 </a>
                 <h4> Lorem Ipsum</h4>
                 <p> lorem ipsum-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="4">
                     <img src="../image/4.jpg" alt="">
                 </a>
                 <h4> Dj Tofaz</h4>
                 <p> Local Vibes-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="5">
                     <img src="../image/2.jpeg" alt="">
                 </a>
                 <h4> Dj Byster</h4>
                 <p> Genge Bomb-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="6">
                     <img src="../image/1.jpeg" alt="">
                 </a>
                 <h4> Dj Pete</h4>
                 <p> Madsus Afrika-2021</p>
             </div>
             <div class="col-md-3">
-                <a href="javascript:void();" class="album-poster">
+                <a href="javascript:void();" class="album-poster" data-switch="7">
                     <img src="../image/1.jpeg" alt="">
                 </a>
                 <h4> Dj Harvey</h4>
@@ -150,64 +150,78 @@
 
 
     <script>
+        $(".album-poster").on('click', function(e){
+            var dataSwitchId = $(this).attr('data-switch');
+
+            // console.log(dataSwitchId);
+            // and now i use  aplayer switch function
+            ap.list.switch(dataSwitchId);  /*this isstatic but we want to use dynamic */
+            // aplayer play function
+                // when i click any song to play
+                ap.play();
+                $("#aplayer").addClass('showPlayer');
+        });
+
+
+
         const ap = new APlayer({
     container: document.getElementById('aplayer'),
     listFolded: true,
     audio: [
         {
         name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
+        artist: 'Dj Pete',
+        url: 'audio/invisible_beauty.mp3',
         cover: 'image/1.jpeg'
+    },
+
+    {
+        name: 'Just Stay',
+        artist: 'Uncle Sam',
+        url: 'audio/just_stay.mp3',
+        cover: 'image/2.jpeg'
+    },
+
+    {
+        name: 'Liquid Time',
+        artist: 'Dj Byester',
+        url: 'audio/liquid_time.mp3',
+        cover: 'image/4.jpeg'
+    },
+
+    {
+        name: 'Silky Smooth',
+        artist: 'Dj Kim',
+        url: 'audio/silky_smooth.mp3',
+        cover: 'image/5.jpeg'
     },
 
     {
         name: 'Invisible Beauty',
         artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
+        url: 'audio/invisible_beauty.mp3',
         cover: 'image/1.jpeg'
     },
 
     {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
+        name: 'Just Stay',
+        artist: 'Uncle Sam',
+        url: 'audio/just_stay.mp3',
+        cover: 'image/2.jpeg'
     },
 
     {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
+        name: 'Liquid Time',
+        artist: 'Dj Byester',
+        url: 'audio/liquid_time.mp3',
+        cover: 'image/4.jpeg'
     },
 
     {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
-    },
-
-    {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
-    },
-
-    {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
-    },
-
-    {
-        name: 'Invisible Beauty',
-        artist: 'Artist Name',
-        url: 'source/invisible_beauty.mp3',
-        cover: 'image/1.jpeg'
+        name: 'Silky Smooth',
+        artist: 'Dj Kim',
+        url: 'audio/silky_smooth.mp3',
+        cover: 'image/5.jpeg'
     },
 
 ]
